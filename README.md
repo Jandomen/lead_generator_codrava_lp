@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+📊 CRM de Leads
 
-## Getting Started
+Este proyecto es un CRM de Leads pensado para agencias de software y equipos comerciales.
 
-First, run the development server:
+Su objetivo es organizar, centralizar y dar seguimiento a potenciales clientes, desde el primer contacto hasta el cierre del proyecto.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+✨ ¿Qué hace este CRM?
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Guarda leads y contactos
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Organiza oportunidades de venta
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Permite hacer seguimiento comercial
 
-## Learn More
+Centraliza la información del cliente
 
-To learn more about Next.js, take a look at the following resources:
+Ayuda a no perder leads
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Mejora la conversión a clientes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🎯 ¿Para quién es?
 
-## Deploy on Vercel
+Agencias de software
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Consultoras tecnológicas
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Equipos de ventas B2B
+
+Freelancers y startups
+
+🧠 ¿Por qué usarlo?
+
+Porque permite trabajar de forma:
+
+Más ordenada
+
+Más profesional
+
+Más eficiente
+
+Todo en un solo lugar.
