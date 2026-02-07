@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: n8n-codrava
+    env: docker
+    plan: free # Puedes empezar con el plan gratis
+    region: ohio # Elige la más cercana
+    dockerContext: .
+    dockerfilePath: ./n8n.Dockerfile
+    healthCheckPath: /healthz
+    envVars:
+      - key: N8N_HOST
+        sync: false
+      - key: N8N_PORT
+        value: 10000
+      - key: N8N_PROTOCOL
+        value: https
+      - key: WEBHOOK_URL
+        fromService:
+          name: n8n-codrava
+          type: web
+          property: url
+    disk:
+      name: n8n-data
+      mountPath: /home/node/.n8n
+      sizeGB: 1
