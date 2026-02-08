@@ -1,0 +1,141 @@
+export const EMAIL_TEMPLATE = `<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODRAVA LP — Ecosistemas Inteligentes</title>
+</head>
+
+<body
+    style="margin: 0; padding: 0; font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #050505;">
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
+        style="background-color: #050505;">
+        <tr>
+            <td style="padding: 40px 10px;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600"
+                    style="margin: 0 auto; background-color: #050505; border: 1px solid #1A1A1A; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+
+                    <!-- Header -->
+                    <tr>
+                        <td style="padding: 60px 40px 40px; text-align: center;">
+                            <div style="margin-bottom: 25px;">
+                                <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_688958c9a71c84bc7f480e1e/05691fdc0_IMG_20251006_185007.jpg"
+                                    alt="CODRAVA LP"
+                                    style="display: block; margin: 0 auto; width: 140px; height: auto; border: 0;">
+                            </div>
+                            <div
+                                style="height: 1px; background: linear-gradient(to right, transparent, #C5A06B, transparent); width: 200px; margin: 0 auto 30px;">
+                            </div>
+                            <h1
+                                style="margin: 0; color: #C5A06B; font-size: 26px; font-weight: 800; letter-spacing: -0.5px; text-transform: uppercase;">
+                                Ecosistemas que Venden</h1>
+                            <p style="margin: 15px 0 0 0; color: #FFFFFF; font-size: 20px; font-weight: 500;">Hola,
+                                {{NAME}}</p>
+                        </td>
+                    </tr>
+
+                    <!-- Main Content -->
+                    <tr>
+                        <td style="padding: 0 40px 40px;">
+                            <p
+                                style="color: #A0A0A0; font-size: 15px; line-height: 1.7; text-align: center; margin-bottom: 40px;">
+                                Hemos analizado tu presencia digital y detectamos una oportunidad única para evolucionar
+                                hacia un
+                                <strong>modelo de ventas automatizado 24/7</strong>. En CODRAVA LP, no construimos webs;
+                                creamos ecosistemas de conversión.
+                            </p>
+
+                            <!-- Servicios en Grid-like tables -->
+                            <h2
+                                style="color: #C5A06B; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; text-align: center; margin-bottom: 25px;">
+                                Soluciones de Élite
+                            </h2>
+
+                            <!-- Service 1 -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
+                                style="background-color: #0A0A0A; border-radius: 16px; margin-bottom: 15px; border: 1px solid #1A1A1A;">
+                                <tr>
+                                    <td style="padding: 25px;">
+                                        <div
+                                            style="color: #C5A06B; font-size: 17px; font-weight: 700; margin-bottom: 8px;">
+                                            🚀 Automatización Inteligente</div>
+                                        <p style="margin: 0; color: #D0D0D0; font-size: 13px; line-height: 1.6;">
+                                            Liberamos tu agenda. Implementamos CRM, bots y flujos automáticos que
+                                            cierran ventas mientras duermes.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Service 2 -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
+                                style="background-color: #0A0A0A; border-radius: 16px; margin-bottom: 15px; border: 1px solid #1A1A1A;">
+                                <tr>
+                                    <td style="padding: 25px;">
+                                        <div
+                                            style="color: #C5A06B; font-size: 17px; font-weight: 700; margin-bottom: 8px;">
+                                            💎 Desarrollo Web Premium</div>
+                                        <p style="margin: 0; color: #D0D0D0; font-size: 13px; line-height: 1.6;">
+                                            Diseño de ultra-lujo enfocado en la conversión. Tu sitio web será la
+                                            herramienta de ventas más potente de tu negocio.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Service 3 -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
+                                style="background-color: #0A0A0A; border-radius: 16px; margin-bottom: 30px; border: 1px solid #1A1A1A;">
+                                <tr>
+                                    <td style="padding: 25px;">
+                                        <div
+                                            style="color: #C5A06B; font-size: 17px; font-weight: 700; margin-bottom: 8px;">
+                                            🔥 Marketing de Alto Impacto</div>
+                                        <p style="margin: 0; color: #D0D0D0; font-size: 13px; line-height: 1.6;">
+                                            Estrategias multicanal que garantizan un flujo constante de clientes
+                                            potenciales calificados a tu puerta.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- CTA -->
+                    <tr>
+                        <td style="padding: 0 40px 60px; text-align: center;">
+                            <a href="https://wa.me/525648407249"
+                                style="background-color: #C5A06B; color: #000000; padding: 18px 45px; border-radius: 50px; text-decoration: none; font-size: 15px; font-weight: 800; display: inline-block; box-shadow: 0 10px 20px rgba(197,160,107,0.3);">
+                                HABLAR CON UN EXPERTO
+                            </a>
+                            <p style="margin: 20px 0 0 0; color: #666666; font-size: 12px; font-weight: 500;">Sesión de
+                                consultoría estratégica sin compromiso</p>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td
+                            style="background-color: #0A0A0A; padding: 40px; text-align: center; border-top: 1px solid #1A1A1A;">
+                            <div style="margin-bottom: 20px;">
+                                <p
+                                    style="margin: 0; color: #C5A06B; font-size: 14px; font-weight: 800; letter-spacing: 2px;">
+                                    CODRAVA LP</p>
+                                <p style="margin: 5px 0 0 0; color: #666666; font-size: 11px;">Jandossoft Intelligence
+                                    Research</p>
+                            </div>
+                            <p
+                                style="margin: 0; color: #444444; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                                © {{YEAR}} — TODOS LOS DERECHOS RESERVADOS
+                            </p>
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>`;
