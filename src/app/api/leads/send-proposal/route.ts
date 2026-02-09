@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import dbConnect from '@/lib/db';
 import Lead from '@/models/Lead';
 import { sendToN8N } from '@/lib/n8n';
-import { EMAIL_TEMPLATE } from '@/lib/emailTemplate';
+import fs from 'fs';
+import path from 'path';
 
 export async function POST(req: NextRequest) {
     await dbConnect();
@@ -25,8 +26,19 @@ export async function POST(req: NextRequest) {
         }
 
 
+        const templatePath = path.join(process.cwd(), 'PLANTILLA DE CODRAVA LP.html');
+        let htmlContent = '';
+
+        try {
+            htmlContent = fs.readFileSync(templatePath, 'utf-8');
+        } catch (err) {
+            console.error('Error reading HTML template:', err);
+            return NextResponse.json({ error: 'Could not read HTML template file' }, { status: 500 });
+        }
+
+
         const currentYear = new Date().getFullYear().toString();
-        const personalizedHtml = EMAIL_TEMPLATE
+        const personalizedHtml = htmlContent
             .replace(/{{NAME}}/g, targetName)
             .replace(/{{YEAR}}/g, currentYear);
 

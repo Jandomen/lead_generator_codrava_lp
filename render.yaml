@@ -11,7 +11,7 @@ services:
       - key: N8N_HOST
         sync: false
       - key: N8N_PORT
-        value: 10000
+        value: 5678
       - key: N8N_PROTOCOL
         value: https
       - key: WEBHOOK_URL
