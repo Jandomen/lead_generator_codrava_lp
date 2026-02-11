@@ -17,7 +17,7 @@ export interface GooglePlace {
 /**
  * Busca lugares reales usando la nueva API de Google Places (v1).
  */
-export const searchPlaces = async (query: string, location?: string): Promise<GooglePlace[]> => {
+export const searchPlaces = async (query: string, location?: string, limit: number = 20): Promise<GooglePlace[]> => {
     if (!GOOGLE_MAPS_API_KEY) {
         throw new Error('GOOGLE_MAPS_API_KEY no configurada. Por favor, revisa tu archivo .env');
     }
@@ -30,7 +30,7 @@ export const searchPlaces = async (query: string, location?: string): Promise<Go
             {
                 textQuery: `${query} ${location || ''}`,
                 languageCode: 'es',
-                maxResultCount: 20 // Máximo permitido para búsqueda de texto
+                maxResultCount: limit // Dinámico hasta 20
             },
             {
                 headers: {

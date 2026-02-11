@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Usuario Premium - CODRAVA OSINT CRM</title>
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark: #050505;
+            --glass: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--dark);
+            color: #fff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin: 0;
+            background: linear-gradient(to right, #fff, var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        section {
+            margin-bottom: 80px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-left: 4px solid var(--gold);
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #aaa;
+        }
+
+        .mockup {
+            width: 100%;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            margin: 30px 0;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .mockup:hover {
+            transform: scale(1.02);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--gold);
+            color: #000;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            .mockup {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+
+            h1 {
+                -webkit-text-fill-color: black;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="badge">V2.0 STABLE</div>
+            <h1>CODRAVA OSINT CRM</h1>
+            <div class="subtitle">Guía de Operaciones Inteligentes</div>
+        </header>
+
+        <section>
+            <h2>1. El Dashboard de Inteligencia</h2>
+            <div class="grid">
+                <div>
+                    <p>Visualiza la salud de tu pipeline en un solo vistazo. El dashboard utiliza <b>Recharts</b> para
+                        proyectar ingresos, analizar la calidad de los leads vía IA y monitorear la actividad en tiempo
+                        real.</p>
+                    <ul>
+                        <li><b>Métricas Gold:</b> ROI, Pipeline Value y Tasa de Conversión.</li>
+                        <li><b>Gráficos Dinámicos:</b> Estado de ventas y distribución por sector.</li>
+                    </ul>
+                </div>
+                <img src="crm_dashboard_mockup_1770834018156.png" class="mockup" alt="Dashboard">
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Minería de Leads (OSINT)</h2>
+            <div class="grid">
+                <img src="crm_osint_miner_mockup_1770834052095.png" class="mockup" alt="OSINT Miner">
+                <div>
+                    <p>Nuestro motor híbrido (Go + n8n) realiza búsquedas profundas para encontrar prospectos ideales.
+                        Solo define el sector y la ubicación.</p>
+                    <ul>
+                        <li><b>Scraping Multicapa:</b> Google Maps, Web Extraction y Social Search.</li>
+                        <li><b>Filtro de Calidad:</b> Solo importa leads con datos de contacto verificados.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Pipeline de Ventas</h2>
+            <div class="grid">
+                <div>
+                    <p>Gestión visual tipo Kanban. Arrastra y suelta (o cambia el estado) para mover leads a través de
+                        tu embudo de ventas personalizado.</p>
+                    <ul>
+                        <li><b>AI Scoring:</b> Cada tarjeta muestra una puntuación de 1-100 calculada por Llama 3.3.
+                        </li>
+                        <li><b>Priorización:</b> Enfócate en las columnas de mayor valor.</li>
+                    </ul>
+                </div>
+                <img src="crm_pipeline_mockup_1770834033349.png" class="mockup" alt="Pipeline">
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Detalle y Micro-Automatización</h2>
+            <div class="grid">
+                <img src="crm_lead_detail_mockup_1770834067761.png" class="mockup" alt="Detalle de Lead">
+                <div>
+                    <p>El panel lateral es donde ocurre la magia. Accede a la <b>Línea de Vida</b> del lead y dispara
+                        automatizaciones en n8n.</p>
+                    <ul>
+                        <li><b>Timeline:</b> Historial completo de llamadas, notas y cotizaciones.</li>
+                        <li><b>Smart Follow-up:</b> Al marcar como 'Interesado', el sistema agenda tareas y redacta
+                            emails automáticamente.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 JANDOSOFT - CODRAVA LP INTEL. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

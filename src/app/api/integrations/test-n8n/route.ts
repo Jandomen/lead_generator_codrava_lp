@@ -23,14 +23,11 @@ export async function POST() {
             timestamp: new Date().toISOString()
         });
 
-        if (!process.env.N8N_WEBHOOK_URL) {
-            return NextResponse.json({
-                success: false,
-                error: 'No hay URL de n8n configurada en el servidor (N8N_WEBHOOK_URL)'
-            }, { status: 400 });
+        if (!result.success) {
+            return NextResponse.json(result, { status: result.statusCode || 500 });
         }
 
-        return NextResponse.json({ success: true, result });
+        return NextResponse.json(result);
     } catch (error: any) {
         console.error('N8N test error:', error);
         return NextResponse.json({

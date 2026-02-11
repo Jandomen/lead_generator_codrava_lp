@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function middleware(request: NextRequest) {
-    // Por ahora el middleware no hace nada, solo deja pasar todas las peticiones
+export function proxy(request: NextRequest) {
+    // Por ahora el proxy no hace nada, solo deja pasar todas las peticiones
     return NextResponse.next();
 }
 

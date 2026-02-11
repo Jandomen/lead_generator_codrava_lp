@@ -19,7 +19,7 @@ export const getCampaigns = async (userId: string) => {
     return Campaign.find({ userId: new mongoose.Types.ObjectId(userId) }).sort({ createdAt: -1 });
 };
 
-export const generateLeadsForCampaign = async (campaignId: string, query: string, location: string) => {
+export const generateLeadsForCampaign = async (campaignId: string, query: string, location: string, limit: number = 20) => {
     await dbConnect();
 
     const campaign = await Campaign.findById(campaignId);
@@ -28,7 +28,7 @@ export const generateLeadsForCampaign = async (campaignId: string, query: string
     const createdLeads = [];
 
     try {
-        const places = await searchPlaces(query, location);
+        const places = await searchPlaces(query, location, limit);
         console.log(`Places found: ${places.length}`);
 
         for (const place of places) {
@@ -65,8 +65,8 @@ export const generateLeadsForCampaign = async (campaignId: string, query: string
 
                         // Si n8n ya encontró algo en su proceso asíncrono, podríamos recibirlo aquí
                         // Aunque normalmente n8n lo actualizará en la DB después
-                        if (osintResult && osintResult.email) {
-                            foundEmail = osintResult.email;
+                        if (osintResult && osintResult.success && osintResult.data?.email) {
+                            foundEmail = osintResult.data.email;
                             console.log(`🎯 [OSINT] Email encontrado vía n8n para ${place.name}: ${foundEmail}`);
                         }
                     }

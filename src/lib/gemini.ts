@@ -79,7 +79,8 @@ export interface VoiceCommandData {
     query?: string;
     location?: string;
     leadName?: string;
-    dateTime?: string; // ISO string or relative
+    dateTime?: string;
+    limit?: number;
 }
 
 export async function parseVoiceCommand(transcript: string): Promise<VoiceCommandData> {
@@ -98,18 +99,20 @@ export async function parseVoiceCommand(transcript: string): Promise<VoiceComman
        - query: el rubro o tipo de negocio
        - location: la ciudad o zona
     
-    2. Si el usuario quiere AGENDAR una cita o seguimiento (ej: "agenda cita con Juan para mañana a las 10", "reunión con Maria el lunes"):
-       - intent: "schedule"
-       - leadName: el nombre de la persona o negocio
-       - dateTime: la fecha y hora calculada en formato ISO 8601 basado en la fecha actual.
+        - dateTime: la fecha y hora calculada en formato ISO 8601 basado en la fecha actual.
+
+    3. Para cualquier búsqueda:
+       - Si el usuario especifica una CANTIDAD (ej: "busca 5 abogados", "encuentra 10 tiendas"), extrae el número en "limit".
+       - El "limit" NUNCA puede ser mayor a 20. Si el usuario pide más de 20, pon 20.
+       - Si no especifica cantidad, usa el valor actual de la perilla o 20 por defecto.
     
-    Respuesta UNICAMENTE en JSON:
     {
       "intent": "search" | "schedule" | "unknown",
       "query": "string",
       "location": "string",
       "leadName": "string",
-      "dateTime": "ISO_DATE_STRING"
+      "dateTime": "ISO_DATE_STRING",
+      "limit": número
     }
     `;
 

@@ -4,19 +4,20 @@ import { generateLeadsForCampaign } from '@/services/campaignService';
 export async function POST(req: Request) {
     try {
         const body = await req.json();
-        const { campaignId, query, location } = body;
+        const { campaignId, query, location, limit } = body;
 
         console.log('--- LEAD GENERATION REQUEST ---');
         console.log('Campaign ID:', campaignId);
         console.log('Query:', query);
         console.log('Location:', location);
+        console.log('Limit:', limit);
 
         if (!campaignId || !query) {
             console.warn('Missing required fields in request (campaignId or query)');
             return NextResponse.json({ error: 'Missing required fields (campaignId and query are mandatory)' }, { status: 400 });
         }
 
-        const leads = await generateLeadsForCampaign(campaignId, query, location);
+        const leads = await generateLeadsForCampaign(campaignId, query, location, limit);
         console.log(`Successfully generated ${leads.length} leads`);
 
         return NextResponse.json({ success: true, count: leads.length, leads });
