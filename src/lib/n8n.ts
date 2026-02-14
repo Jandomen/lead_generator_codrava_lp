@@ -4,8 +4,8 @@ const N8N_WEBHOOK_URL = process.env.N8N_WEBHOOK_URL;
 const N8N_API_KEY = process.env.N8N_API_KEY;
 
 // Puente de comunicación: Detectar dónde estamos
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL ||
-    (process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : 'http://localhost:3000');
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || process.env.APP_URL ||
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : (process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : ''));
 const ORIGIN_PLATFORM = process.env.VERCEL ? 'Vercel' : (process.env.RENDER ? 'Render' : 'Local');
 
 export const sendToN8N = async (data: any) => {
@@ -13,6 +13,11 @@ export const sendToN8N = async (data: any) => {
         console.warn('⚠️ N8N_WEBHOOK_URL no configurado.');
         return { success: false, error: 'N8N_WEBHOOK_URL no configurado' };
     }
+
+    // Determine target URL based on event type if needed, or use default
+    // HARDCODED FIX: Using TEST webhook because Production (POST /webhook/...) returns 404 even when active.
+    let targetUrl = 'https://lead-generator-codrava-lp.onrender.com/webhook-test/osint-search';
+    // let targetUrl = N8N_WEBHOOK_URL; // Restore this when production deploy is fixed
 
     // Enriquecer datos con metadatos del puente
     const enrichedData = {
@@ -24,7 +29,7 @@ export const sendToN8N = async (data: any) => {
         }
     };
 
-    console.log(`📡 [n8n Bridge] Origen: ${ORIGIN_PLATFORM} | Destino: ${N8N_WEBHOOK_URL}`);
+    console.log(`📡 [n8n Bridge] Origen: ${ORIGIN_PLATFORM} | Destino: ${targetUrl}`);
     console.log(`📦 [n8n Data]:`, JSON.stringify(enrichedData).substring(0, 100) + '...');
 
     try {
@@ -36,7 +41,7 @@ export const sendToN8N = async (data: any) => {
             headers['X-N8N-API-KEY'] = N8N_API_KEY;
         }
 
-        const response = await axios.post(N8N_WEBHOOK_URL, enrichedData, {
+        const response = await axios.post(targetUrl, enrichedData, {
             timeout: 10000,
             headers
         });
