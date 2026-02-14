@@ -15,9 +15,9 @@ export const sendToN8N = async (data: any) => {
     }
 
     // Determine target URL based on event type if needed, or use default
-    // HARDCODED FIX: Using TEST webhook because Production (POST /webhook/...) returns 404 even when active.
-    let targetUrl = 'https://lead-generator-codrava-lp.onrender.com/webhook-test/osint-search';
-    // let targetUrl = N8N_WEBHOOK_URL; // Restore this when production deploy is fixed
+    // UPDATED: Using new 'send-proposal' path to fix 404 issues and align with the new n8n configuration.
+    let targetUrl = 'https://lead-generator-codrava-lp.onrender.com/webhook/send-proposal';
+    // let targetUrl = N8N_WEBHOOK_URL; // Fallback to env var once fully stable
 
     // Enriquecer datos con metadatos del puente
     const enrichedData = {
